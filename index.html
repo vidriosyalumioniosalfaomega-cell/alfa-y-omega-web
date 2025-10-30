@@ -36,7 +36,7 @@
       padding-bottom: 0.5rem;
     }
 
-    /* Carrusel */
+    /* Carrusel general */
     .carousel {
       position: relative;
       max-width: 900px;
@@ -48,11 +48,13 @@
     .carousel-images {
       display: flex;
       transition: transform 1s ease-in-out;
+      width: 100%;
     }
     .carousel-images img {
       width: 100%;
       height: 500px;
       object-fit: cover;
+      flex-shrink: 0;
     }
     .carousel-buttons button {
       position: absolute;
@@ -66,8 +68,8 @@
       cursor: pointer;
       border-radius: 5px;
     }
-    #prev { left: 10px; }
-    #next { right: 10px; }
+    .carousel-buttons .prev { left: 10px; }
+    .carousel-buttons .next { right: 10px; }
 
     /* Contacto */
     form {
@@ -114,8 +116,6 @@
       transform: scale(1.2);
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-
-    /* Animación del botón de ubicación */
     .floating-buttons a.location img {
       animation: pulse 1.5s infinite;
     }
@@ -133,7 +133,6 @@
       margin-top: 2rem;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .carousel-images img { height: 300px; }
     }
@@ -141,7 +140,6 @@
 </head>
 <body>
   <header></header>
-
   <nav>ALFA Y OMEGA • Vidrios y Aluminios</nav>
 
   <section id="nosotros">
@@ -152,44 +150,92 @@
 
   <section id="portafolio">
     <h2>Portafolio</h2>
-    <div class="carousel">
-      <div class="carousel-images" id="carousel-images">
-        <!-- Tus imágenes locales -->
-        <img src="1.png" alt="Proyecto 1">
-        <img src="2.png" alt="Proyecto 2">
-        <img src="3.png" alt="Proyecto 3">
-        <img src="4.png" alt="Proyecto 4">
-        <img src="5.png" alt="Proyecto 5">
-        <img src="6.png" alt="Proyecto 6">
-        <img src="7.png" alt="Proyecto 7">
-        <img src="8.png" alt="Proyecto 8">
-        <img src="9.png" alt="Proyecto 9">
-        <img src="10.png" alt="Proyecto 10">
-        <img src="11.png" alt="Proyecto 11">
-        <img src="12.png" alt="Proyecto 12">
-        <img src="13.png" alt="Proyecto 13">
-        <img src="14.png" alt="Proyecto 14">
-        <img src="15.png" alt="Proyecto 15">
-        <img src="16.png" alt="Proyecto 16">
-        <img src="17.png" alt="Proyecto 17">
-        <img src="18.png" alt="Proyecto 18">
-        <img src="19.png" alt="Proyecto 19">
-        <img src="20.png" alt="Proyecto 20">
-        <img src="21.png" alt="Proyecto 21">
-        <img src="22.png" alt="Proyecto 22">
-        <img src="23.png" alt="Proyecto 23">
-        <img src="24.png" alt="Proyecto 24">
-        <img src="25.png" alt="Proyecto 25">
-        <img src="26.png" alt="Proyecto 26">
-        <img src="27.png" alt="Proyecto 27">
-        <img src="28.png" alt="Proyecto 28">
-        <img src="29.png" alt="Proyecto 29">
-        <img src="30.png" alt="Proyecto 30">
-        <img src="31.png" alt="Proyecto 31">
+
+    <h3>Divisiones de baño en aluminio con acrílicos</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/aluminio1.png" alt="">
+        <img src="imagenes/aluminio2.png" alt="">
+        <img src="imagenes/aluminio3.png" alt="">
       </div>
       <div class="carousel-buttons">
-        <button id="prev">&#10094;</button>
-        <button id="next">&#10095;</button>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>Divisiones de baño en vidrio templado</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/templado1.png" alt="">
+        <img src="imagenes/templado2.png" alt="">
+        <img src="imagenes/templado3.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>Fachadas en vidrio templado</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/fachada1.png" alt="">
+        <img src="imagenes/fachada2.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>Puertas en aluminio</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/puerta1.png" alt="">
+        <img src="imagenes/puerta2.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>Ventanas en aluminio sistema 744</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/ventana1.png" alt="">
+        <img src="imagenes/ventana2.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>Vitrinas</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/vitrina1.png" alt="">
+        <img src="imagenes/vitrina2.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- NUEVA SECCIÓN OTROS -->
+    <h3>Otros</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="imagenes/otros1.png" alt="">
+        <img src="imagenes/otros2.png" alt="">
+        <img src="imagenes/otros3.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </div>
   </section>
@@ -207,7 +253,6 @@
     <p>&copy; 2025 ALFA Y OMEGA - Vidrios y Aluminios. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botones flotantes -->
   <div class="floating-buttons">
     <a href="https://wa.me/573213458760" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
     <a href="https://www.instagram.com/alfayomegaaluminiosyvidrios/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"></a>
@@ -216,31 +261,29 @@
   </div>
 
   <script>
-    // Envío a WhatsApp
-    document.getElementById("contactForm").addEventListener("submit", function(e){
+    // Envío por WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", e => {
       e.preventDefault();
       const nombre = document.getElementById("nombre").value;
       const mensaje = document.getElementById("mensaje").value;
-      const url = `https://wa.me/573213458760?text=Hola, soy ${nombre}. ${mensaje}`;
-      window.open(url, "_blank");
+      window.open(`https://wa.me/573213458760?text=Hola, soy ${nombre}. ${mensaje}`, "_blank");
     });
 
-    // Carrusel automático
-    const carousel = document.getElementById("carousel-images");
-    const slides = carousel.children.length;
-    let index = 0;
+    // Carruseles independientes
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const images = carousel.querySelector('.carousel-images');
+      const slides = images.children.length;
+      let index = 0;
 
-    function showSlide(i) {
-      index = (i + slides) % slides;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
+      function showSlide(i) {
+        index = (i + slides) % slides;
+        images.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-    setInterval(() => showSlide(index + 1), 4000);
-
-    // Botones de navegación
-    document.getElementById("prev").onclick = () => showSlide(index - 1);
-    document.getElementById("next").onclick = () => showSlide(index + 1);
+      carousel.querySelector('.next').onclick = () => showSlide(index + 1);
+      carousel.querySelector('.prev').onclick = () => showSlide(index - 1);
+      setInterval(() => showSlide(index + 1), 4000);
+    });
   </script>
 </body>
 </html>
-
