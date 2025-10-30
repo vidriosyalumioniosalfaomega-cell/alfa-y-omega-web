@@ -1,20 +1,311 @@
-/* Carrusel general */
-.carousel {
-  position: relative;
-  max-width: 900px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.carousel-images {
-  display: flex;
-  transition: transform 1s ease-in-out;
-  width: 100%;
-}
-.carousel-images img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>alfa y omega - vidrios y aluminios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background: url("portada_alfaomega2.0.png") center/cover no-repeat;
+    }
+    nav {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    h2 {
+      color: #001f3f;
+      border-bottom: 3px solid #c00;
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Carrusel general */
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 3rem auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .carousel-images {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      width: 100%;
+    }
+    .carousel-images img {
+      width: 100%;
+      height: 600px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background-color: #fff;
+    }
+    .carousel-buttons button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .carousel-buttons .prev { left: 10px; }
+    .carousel-buttons .next { right: 10px; }
+
+    /* Contacto */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea, button {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #c00;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: #001f3f;
+    }
+
+    /* Botones flotantes */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+    .floating-buttons a img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .floating-buttons a img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .floating-buttons a.location img {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.4); }
+      50% { transform: scale(1.15); box-shadow: 0 0 20px rgba(255,0,0,0.6); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,0,0,0.4); }
+    }
+
+    footer {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-images img { height: 350px; }
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+  <nav>alfa y omega • vidrios y aluminios</nav>
+
+  <section id="nosotros">
+    <h2>sobre nosotros</h2>
+    <p>somos una empresa dedicada a la fabricacion, instalacion y mantenimiento de estructuras en vidrio y aluminio. 
+    realizamos trabajos de ventaneria, fachadas, divisiones, techos, vitrinas, barandas, espejos y mas, con calidad y cumplimiento.</p>
+  </section>
+
+  <section id="portafolio">
+    <h2>portafolio</h2>
+
+    <h3>divisiones de bano en aluminio con acrilicos</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="banoa1.png" alt="">
+        <img src="banoa2.png" alt="">
+        <img src="banoa3.png" alt="">
+        <img src="banoa4.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>divisiones de bano en vidrio templado</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="banov1.png" alt="">
+        <img src="banov2.png" alt="">
+        <img src="banov3.png" alt="">
+        <img src="banov4.png" alt="">
+        <img src="banov5.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>fachadas en vidrio templado</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="fachada1.png" alt="">
+        <img src="fachada2.png" alt="">
+        <img src="fachada3.png" alt="">
+        <img src="fachada4.png" alt="">
+        <img src="fachada5.png" alt="">
+        <img src="fachada6.png" alt="">
+        <img src="fachada7.png" alt="">
+        <img src="fachada8.png" alt="">
+        <img src="fachada9.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>puertas en aluminio</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="puerta1.png" alt="">
+        <img src="puerta2.png" alt="">
+        <img src="puerta3.png" alt="">
+        <img src="puerta4.png" alt="">
+        <img src="puerta5.png" alt="">
+        <img src="puerta6.png" alt="">
+        <img src="puerta7.png" alt="">
+        <img src="puerta8.png" alt="">
+        <img src="puerta9.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>ventanas en aluminio sistema 744</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="ventana1.png" alt="">
+        <img src="ventana2.png" alt="">
+        <img src="ventana3.png" alt="">
+        <img src="ventana4.png" alt="">
+        <img src="ventana5.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>vitrinas</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="vitrina1.png" alt="">
+        <img src="vitrina2.png" alt="">
+        <img src="vitrina3.png" alt="">
+        <img src="vitrina4.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <h3>otros</h3>
+    <div class="carousel" data-carousel>
+      <div class="carousel-images">
+        <img src="otros1.png" alt="">
+        <img src="otros2.png" alt="">
+        <img src="otros3.png" alt="">
+      </div>
+      <div class="carousel-buttons">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>contactanos</h2>
+    <form id="contactForm">
+      <input type="text" id="nombre" placeholder="tu nombre" required>
+      <textarea id="mensaje" placeholder="escribe tu mensaje..." required></textarea>
+      <button type="submit">enviar por whatsapp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 alfa y omega - vidrios y aluminios. todos los derechos reservados.</p>
+  </footer>
+
+  <div class="floating-buttons">
+    <a href="https://wa.me/573213458760" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="whatsapp"></a>
+    <a href="https://www.instagram.com/alfayomegaaluminiosyvidrios/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="instagram"></a>
+    <a href="https://web.facebook.com/profile.php?id=61583155764932" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="facebook"></a>
+    <a href="https://maps.app.goo.gl/CFYkhUG3K4Uw2LFz8" target="_blank" class="location"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="ubicacion"></a>
+  </div>
+
+  <script>
+    // envio por whatsapp
+    document.getElementById("contactForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const mensaje = document.getElementById("mensaje").value;
+      window.open(`https://wa.me/573213458760?text=hola, soy ${nombre}. ${mensaje}`, "_blank");
+    });
+
+    // carruseles independientes con intervalo de 10 segundos
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const images = carousel.querySelector('.carousel-images');
+      const slides = images.children.length;
+      let index = 0;
+
+      function showSlide(i) {
+        index = (i + slides) % slides;
+        images.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      carousel.querySelector('.next').onclick = () => showSlide(index + 1);
+      carousel.querySelector('.prev').onclick = () => showSlide(index - 1);
+      setInterval(() => showSlide(index + 1), 10000); // 10 segundos
+    });
+  </script>
+</body>
+</html>
